@@ -15,25 +15,25 @@ class Application_cl(object):
 
    @cherrypy.expose
    #-------------------------------------------------------
-   def index(self):
+   def index(self,listformNow = "tabelle"):
    #-------------------------------------------------------
-      return self.createList_p()
+      return self.createList_p(listformNow)
 
    @cherrypy.expose
    #-------------------------------------------------------
-   def add(self):
+   def add(self,listformNow):
    #-------------------------------------------------------
-      return self.createForm_p()
+      return self.createForm_p(listformNow)
 
    @cherrypy.expose
    #-------------------------------------------------------
-   def edit(self, id_spl):
+   def edit(self, id_spl,listformNow):
    #-------------------------------------------------------
-      return self.createForm_p(id_spl)
+      return self.createForm_p(id_spl,listformNow)
 
    @cherrypy.expose
    #-------------------------------------------------------
-   def save(self, id_spa, name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa,semanzahl1,semanzahl2):
+   def save(self,listformNow, id_spa, name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa,semanzahl1,semanzahl2):
    #-------------------------------------------------------
       id_s = id_spa
       data_a = [ name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa,semanzahl1,semanzahl2 ]
@@ -41,9 +41,18 @@ class Application_cl(object):
          self.db_o.update_px(id_s, data_a)
       else:
          self.db_o.create_px(data_a)
-      return self.createList_p()
+      return self.createList_p(listformNow)
 
    @cherrypy.expose
+   #-------------------------------------------------------
+   def delete(self, id, listformNow):
+   #-------------------------------------------------------
+       self.db_o.delete_px(id)
+       raise cherrypy.HTTPRedirect('/?listformNow=' + listformNow)
+
+   @cherrypy.expose
+
+
    #-------------------------------------------------------
    def default(self, *arguments, **kwargs):
    #-------------------------------------------------------
@@ -55,17 +64,17 @@ class Application_cl(object):
    default.exposed= True
 
    #-------------------------------------------------------
-   def createList_p(self):
+   def createList_p(self, listformNow):
    #-------------------------------------------------------
       data_o = self.db_o.read_px()
-      return self.view_o.createList_px(data_o)
+      return self.view_o.createList_px(data_o, listformNow)
 
    #-------------------------------------------------------
-   def createForm_p(self, id_spl = None):
+   def createForm_p(self,listformNow, id_spl = None):
    #-------------------------------------------------------
       if id_spl != None:
          data_o = self.db_o.read_px(id_spl)
       else:
          data_o = self.db_o.getDefault_px()
-      return self.view_o.createForm_px(id_spl, data_o)
+      return self.view_o.createForm_px(listformNow,id_spl, data_o)
 # EOF

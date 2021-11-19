@@ -7,6 +7,7 @@
    <body>
       <form id="idWTForm" action="/save" method="POST">
          <input type="hidden" value="${key_s}$" id="id_spa" name="id_spa" />
+         <input type="hidden" value="${listformNow}" id="listformNow" name="listformNow" />
          <div>
             <label for="name1_spa">1. Name</label>
             <input type="text"
@@ -64,6 +65,7 @@
                   name="semanzahl2" required />
          </div>
          <div>
+            <a href='/?listformNow=${listformNow}' class='button'>Abbrechen</a> &nbsp;
             <input type="submit" value="Speichern"/>
          </div>
       </form>

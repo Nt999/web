@@ -1,0 +1,79 @@
+
+.buttonBearbeiten {
+    background-color: #4CAF50;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  .buttonEntfernen {
+    background-color: rgb(218, 52, 52);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  .buttonSwitch {
+    background-color: rgb(255, 238, 1);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  .buttonNeu {
+    background-color: rgb(52, 83, 218);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  .buttonBearbeiten2 {
+    background-color: #4CAF50;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 4px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  .buttonEntfernen2 {
+    background-color: rgb(218, 52, 52);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 4px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1px;
+    cursor: pointer;
+  }
+  tr:hover {background-color: #f5f5f5;}
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;}
+  

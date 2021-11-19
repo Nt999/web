@@ -4,6 +4,7 @@
       <title>Web-Teams</title>
       <meta charset="UTF-8" />
    </head>
+   <style>@import "/webteams.css";</style>
    <body>
       <table>
          <tr>
@@ -19,12 +20,16 @@
             <td>${data_o[key_s][3]}$</td>
             <td>${data_o[key_s][4]}$</td>
             <td>${data_o[key_s][5]}$</td>
-            <td><a href="/edit/${key_s}$">bearbeiten</a></td>
+            <td>
+               <a href="/edit/${key_s}/${listformNow}/" class = "buttonBearbeiten">bearbeiten</a>
+               <a href='/delete/${key_s}/${listformNow}' class='clDelete buttonEntfernen'>löschen</a>
+            </td>
          </tr>
          ${ :end-for }$
       </table>
       <div>
-         <a href="/add">erfassen</a>
+         <a href="/add/${listformNow}/" class="buttonNeu">Neuer Eintrag</a>
+         <a href="/?listformNow=${listformNew}" class="buttonSwitch">Darstellung in Liste</a>
       </div>
    </body>
 </html>

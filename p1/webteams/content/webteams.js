@@ -3,7 +3,11 @@ function confirmDelete_p (event_opl) {
         (event_opl.target.className             == "clDelete")    ) {
        // Klick auf Link zum Löschen
  
-       // Ihre Ergänzung
+      if(confirm('Möchten Sie den Eintrag wirklich löschen?')){
+
+      }else{
+          event.preventDefault();
+      } // Ihre Ergänzung
     }
  }
  window.onload = function () {
