@@ -8,12 +8,17 @@
       <table>
          <tr>
             <th>Name (1)</th><th>Vorname (1)</th><th>Matr.-Nr. (1)</th><th>Aktion</th>
+            <th>Name (2)</th><th>Vorname (2)</th><th>Matr.-Nr. (2)</th><th>Aktion2</th>
+
          </tr>
          ${ for key_s in data_o: }$
          <tr>
             <td>${data_o[key_s][0]}$</td>
             <td>${data_o[key_s][1]}$</td>
             <td>${data_o[key_s][2]}$</td>
+            <td>${data_o[key_s][3]}$</td>
+            <td>${data_o[key_s][4]}$</td>
+            <td>${data_o[key_s][5]}$</td>
             <td><a href="/edit/${key_s}$">bearbeiten</a></td>
          </tr>
          ${ :end-for }$
