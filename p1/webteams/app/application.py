@@ -33,10 +33,10 @@ class Application_cl(object):
 
    @cherrypy.expose
    #-------------------------------------------------------
-   def save(self, id_spa, name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa):
+   def save(self, id_spa, name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa,semanzahl1,semanzahl2):
    #-------------------------------------------------------
       id_s = id_spa
-      data_a = [ name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa ]
+      data_a = [ name1_spa, vorname1_spa, matrnr1_spa, name2_spa, vorname2_spa, matrnr2_spa,semanzahl1,semanzahl2 ]
       if id_s != "None":
          self.db_o.update_px(id_s, data_a)
       else:
